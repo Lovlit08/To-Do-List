@@ -1,0 +1,186 @@
+/* --- Basic Reset and Global Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Lighter background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* --- Main Container for Two-Column Layout --- */
+.main-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Wider container for the two columns */
+    align-items: flex-start;
+}
+
+/* --- Left Column: Calendar Panel --- */
+.calendar-panel {
+    flex: 0 0 300px; /* Fixed width for the calendar */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-panel h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#dateSelector {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.selected-date-display {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.calendar-hint {
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* --- Right Column: To-Do List Container --- */
+.todo-container {
+    flex-grow: 1; /* Takes up the remaining space */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* --- Input Section (Same as before) --- */
+.input-section {
+    display: flex;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+#taskInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+#addTaskBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#addTaskBtn:hover {
+    background-color: #45a049;
+}
+
+/* --- Task List Styles (Same as before) --- */
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50;
+    transition: background 0.3s;
+}
+
+.task-item.completed {
+    border-left: 5px solid #ccc;
+    background: #e0e0e0;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-text {
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 16px;
+    user-select: none;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff6347;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    margin-left: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    color: #cc4c39;
+}
+
+/* --- Responsive Adjustments for smaller screens --- */
+@media (max-width: 800px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .calendar-panel {
+        flex: none;
+        width: 100%;
+    }
+
+    .todo-container {
+        width: 100%;
+        padding: 20px;
+    }
+}

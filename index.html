@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date-Based To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+
+        <div class="calendar-panel">
+            <h2>Select Date 📅</h2>
+            <div id="calendar">
+                <input type="date" id="dateSelector">
+                <p class="selected-date-display">Viewing Tasks for: <strong id="currentDateDisplay">Today</strong></p>
+                <p class="calendar-hint">Select a date to view its tasks.</p>
+            </div>
+        </div>
+
+        <div class="todo-container">
+            <h1>My To-Do List 📝</h1>
+
+            <div class="input-section">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+
+            <ul id="taskList">
+                </ul>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
